@@ -9,6 +9,7 @@
  '(global-font-lock-mode t nil (font-lock))	; enable global syntax highlighting
  '(global-linum-mode t)				; show line numbers on the left side
  '(gnus-inhibit-startup-message t)		; inhibit the startup message in gnu emacs
+ '(history-delete-duplicates t)
  '(initial-scratch-buffer nil)                  ; inhibit the initial scratch buffer
  '(inhibit-startup-echo-area-message t)
  '(inhibit-startup-screen t)			; inhibit the startup screen in emacs
@@ -65,7 +66,7 @@
 
 (defun validate()
   (interactive)
-  (sgml-validate (concat "onsgmls -w xml -s -E30000 -f /home/oswoboda/temp.txt -D /home/journal/Journal-base/lib/xml/ " (buffer-name) " ; grep -v 'non SGML character' /home/oswoboda/temp.txt")))
+  (sgml-validate (concat "onsgmls -w xml -s -E30000 -f /home/oswoboda/temp.txt -D /home/journal/Journal-base/lib/xml/ " (buffer-name) " ; grep -v 'non SGML character\\|Nicht-SGML-Zeichen' /home/oswoboda/temp.txt")))
 
 (defun html-local-keymap()
   (local-set-key (kbd "\C-c\C-v") 'validate)

@@ -37,6 +37,9 @@
 (global-set-key (kbd "\C-k") 'kill-and-join-forward)
 (global-set-key (kbd "\C-c\C-r") 'sgml-tag-region)
 (global-set-key (kbd "C-y") 'better-yank)
+(global-set-key (kbd "M-&") 'query-replace-regexp)
+(global-set-key (kbd "<C-return>") 'nxml-complete)
+(global-set-key (kbd "\C-c DEL") 'sgml-delete-tag)
 
 (defun kill-and-join-forward (&optional arg)
   (interactive "P")
